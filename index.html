@@ -3,106 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gusto | Perut Kenyang, Hati Senang</title>
+    <title>Beranda | Gusto</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --white: #ffffff;
-            --dark: #2d3436;
+            --text-dark: #333333;
+            --bg-light: #f4f7f6;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--primary-gradient);
-            color: var(--white);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); color: var(--text-dark); }
 
-        header {
-            margin-bottom: 3rem;
-        }
+        header { background: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 
-        h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+        nav a { margin-left: 1rem; text-decoration: none; color: var(--text-dark); font-weight: 500; }
+        
+        nav a:hover, nav a.active { color: #764ba2; }
 
-        p.subtitle {
-            font-size: 1.25rem;
-            font-weight: 300;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
+        .hero { background: var(--primary-gradient); color: var(--white); padding: 4rem 2rem; text-align: center; }
 
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
+        .features { padding: 3rem 2rem; text-align: center; }
 
-        .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
+        .card-container { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
 
-        .btn-primary {
-            background: var(--white);
-            color: #764ba2;
-        }
+        .card { background: var(--white); padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; }
 
-        .btn-primary:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        footer {
-            margin-top: 5rem;
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
+        footer { background: var(--white); text-align: center; padding: 1rem; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Gusto</h1>
-        <p class="subtitle">Perut Kenyang, Hati Senang</p>
+        <h3>Gusto</h3>
+        <nav>
+            <a href="index.html" class="active">Beranda</a>
+            <a href="menu.html">Menu</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
     </header>
-    <main>
-        <div class="cta-group">
-            <a href="menu.html" class="btn btn-primary">Lihat Menu</a>
-            <a href="kontak.html" class="btn btn-secondary">Kontak Kami</a>
+
+    <section class="hero">
+        <h1>Selamat Datang di Gusto</h1>
+        <p>Masakan rumahan dengan kualitas terbaik, langsung ke pintu Anda.</p>
+    </section>
+
+    <section class="features">
+        <h2>Kenapa Memilih Gusto?</h2>
+        <div class="card-container">
+            <div class="card"><h3>Bahan Segar</h3><p>Kami menggunakan bahan lokal berkualitas setiap hari.</p></div>
+            <div class="card"><h3>Cepat</h3><p>Pengiriman super cepat ke seluruh kota.</p></div>
+            <div class="card"><h3>Terjangkau</h3><p>Harga ramah di kantong, rasa bintang lima.</p></div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2026 Tim Gusto. All rights reserved.</p>
-    </footer>
+    </section>
+
+    <footer><p>&copy; 2026 Tim Gusto.</p></footer>
 </body>
 </html>

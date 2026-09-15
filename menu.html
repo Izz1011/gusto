@@ -10,28 +10,45 @@
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --white: #ffffff;
             --text-dark: #333333;
+            --bg-light: #f4f7f6;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f7f6;
+            background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
-            background: var(--primary-gradient);
-            color: var(--white);
-            padding: 2rem;
-            text-align: center;
+            background: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
+        header h3 { color: var(--text-dark); }
+
+        nav a {
+            margin-left: 1rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        nav a:hover { color: #764ba2; }
 
         .container {
             max-width: 800px;
             margin: 2rem auto;
             padding: 0 1rem;
+            flex: 1;
         }
 
         .menu-category {
@@ -52,22 +69,27 @@
 
         .price { font-weight: 600; color: #667eea; }
 
-        .back-link {
-            display: block;
+        footer {
+            background: var(--white);
             text-align: center;
-            margin-top: 2rem;
-            color: #764ba2;
-            text-decoration: none;
-            font-weight: 600;
+            padding: 1rem;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Daftar Menu Gusto</h1>
+        <h3>Gusto</h3>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="menu.html" style="color: #764ba2;">Menu</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
     </header>
 
     <div class="container">
+        <h1>Daftar Menu Gusto</h1>
         <section class="menu-category">
             <h2>Makanan Utama</h2>
             <div class="menu-item"><span>Nasi Goreng Gusto</span> <span class="price">Rp 28.000</span></div>
@@ -87,8 +109,10 @@
             <div class="menu-item"><span>Pisang Goreng Coklat Keju</span> <span class="price">Rp 14.000</span></div>
             <div class="menu-item"><span>Es Campur Gusto</span> <span class="price">Rp 16.000</span></div>
         </section>
-
-        <a href="index.html" class="back-link">&larr; Kembali ke Beranda</a>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Tim Gusto.</p>
+    </footer>
 </body>
 </html>

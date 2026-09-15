@@ -4,37 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontak Kami | Gusto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --white: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f4f7f6;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--primary-gradient);
-            color: var(--white);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
         }
+
+        header {
+            background: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h3 { color: var(--text-dark); }
+
+        nav a {
+            margin-left: 1rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        nav a:hover { color: #764ba2; }
 
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: var(--white);
             padding: 2rem;
             border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             width: 100%;
             max-width: 500px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            margin: 2rem auto;
+            flex: 1;
         }
 
-        h2 { margin-bottom: 1.5rem; text-align: center; }
+        h2 { margin-bottom: 1.5rem; text-align: center; color: #764ba2; }
 
         .form-group { margin-bottom: 1rem; }
 
@@ -44,9 +65,8 @@
             width: 100%;
             padding: 12px;
             border-radius: 10px;
-            border: none;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
             font-family: inherit;
         }
 
@@ -56,27 +76,34 @@
             margin-top: 1rem;
             border-radius: 10px;
             border: none;
-            background: var(--white);
-            color: #764ba2;
+            background: var(--primary-gradient);
+            color: var(--white);
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        button:hover { background: #f0f0f0; transform: translateY(-2px); }
+        button:hover { opacity: 0.9; }
 
-        .back-link {
-            display: block;
+        footer {
+            background: var(--white);
             text-align: center;
-            margin-top: 1.5rem;
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            padding: 1rem;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h3>Gusto</h3>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="menu.html">Menu</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="kontak.html" style="color: #764ba2;">Kontak</a>
+        </nav>
+    </header>
+
     <div class="container">
         <h2>Kontak Kami</h2>
         <form id="contactForm">
@@ -94,8 +121,12 @@
             </div>
             <button type="submit">Kirim Pesan</button>
         </form>
-        <a href="index.html" class="back-link">Kembali ke Beranda</a>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Tim Gusto.</p>
+    </footer>
+
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
