@@ -96,5 +96,21 @@
         </form>
         <a href="index.html" class="back-link">Kembali ke Beranda</a>
     </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Terima kasih, ' + name + '! Pesan Anda telah terkirim.');
+                this.reset();
+            } else {
+                alert('Mohon lengkapi semua kolom.');
+            }
+        });
+    </script>
 </body>
 </html>
